@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>User : {{user.first_name}}</title>
+   </head>
+   <body>
+      <h3>Profiles</h3>
+      <a href="/">Home Page</a>
+      <br>
+      <form action="/update_user/{{user.id}}" method="POST">
+		<label>First Name</label>
+		<input type="text" name="first_name" placeholder="{{user.first_name}}">
+         <br>
+		<label>Last Name</label>
+		<input type="text" name= "last_name" placeholder="{{user.last_name}}">
+         <br>
+		<label>Email</label>
+		<input type="email" name="email" placeholder="{{user.email}}">
+         <br>
+		<button type="submit">Metre a jour</button>
+	</form>
+       <table>
+       <thead>
+            <th>Liste d'amis</th>
+       </thead>
+            {% for ami in amis %}
+          <tbody>
+           <td> {{ami.first_name}} </td>
+          </tbody>
+            {% endfor%}
+
+
+
+      </table>
+   </body>
+</html>
